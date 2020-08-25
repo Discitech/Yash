@@ -1,0 +1,129 @@
+.main-container{
+	width: 1000px;
+	height: 500px;
+	display: flex;
+	margin :100px auto;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+}
+
+.base-container-1{
+	flex: 1;
+	width: 400px;
+	height: 500px;
+
+}
+
+.base-container-1 h1{
+	color:  #ec6952;
+	margin-bottom: 30px;
+}
+
+.base-container-2{
+	flex: 1;
+	width: 100px;
+	height: 500px;
+}
+
+.base-container-2 .envolope{
+    margin-bottom: 15px;
+    padding: 15px;
+    position: relative;
+    color: #666;
+    text-align: left;
+    padding-left: 90px;
+    box-shadow: 0 4px 1px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-clip: padding-box;
+
+}
+
+.logo-color-1{
+	position: absolute;
+    left: 0;
+    top: 0;
+    background: #ec6952;
+    color: #fff;
+    width: 60px;
+    height: 75%;
+    font-size: 20px;
+    padding-top: 12px;
+    text-align: center;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    background-clip: padding-box;
+}
+
+.base-container-2 .envolope a{
+	text-decoration: none;
+	background-color: transparent;
+	transition: all 0.4s ease-in-out;
+    color: #666;
+}
+
+.input-4{
+	border-radius: 20px;
+	padding: 10px;
+	margin: 10px 0;
+	width: 93%;
+	border: 1px solid #999;
+	outline: none;
+}
+
+.btn-4{
+	color: #fff;
+	width: 93%;
+	padding: 10px;
+	border-radius: 20px;
+	font-size: 15px;
+	margin: 10px 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background-color: #ec6952;
+}
+
+.vertical-line{
+      width: 0px; /* Use only border style */
+    
+      float: left; 
+      border: 1px inset; 
+      height:500px;
+      margin-left:50px;
+      margin-right:50px;/* This is default border style for <hr> tag */
+    }
+
+.adjust-4{
+	margin-top: 90px;
+	margin-left: 20px;
+	 padding-right: 5px;
+}
+ .or{
+     background: #fff;
+    display: inline-block;
+    padding: 10px 0;
+    position: relative;
+    top: 200px;
+    margin-left: -10px
+
+ }
+
+ .form-deco a{
+ 	text-decoration: none;
+ 	margin-left: 0px;
+ }
+
+.form-bottom-2 a{
+text-decoration: none;
+}
+
+.form-bottom-2{
+	margin-top: 50px;
+}
+
+.base-container-2 h1{
+	color:  #ec6952;
+	margin-bottom: 30px;
+}

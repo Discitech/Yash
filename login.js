@@ -1,13 +1,10 @@
 import React,{Component} from 'react';
 import loginImg from "../../login.svg";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {
-	Youtube,
-	FaFacebook,
-	FaTwitter,
-	FaInstagram
-} from '@fortawesome/free-brands-svg-icons';
-import LoginFacebook from './components/facebook.js';
+import {faFacebook,faGoogle,faInstagram } from '@fortawesome/free-brands-svg-icons';
+import "./login.css";
+import { faUser,faLock} from '@fortawesome/free-solid-svg-icons';
+
 
 class Login extends Component{
 
@@ -43,38 +40,51 @@ class Login extends Component{
 			alert("form submitted")
 		}
 		
+
 	}
 	render(){
 		return(
-		
-			<div className="base-container">
-			<div className="header">LogIn</div>
-			<div className="content">
-			     <div className="image">
-			        <img src={loginImg} alt=""/>
-			     </div>
-			     <div className="form">
-					  <div className="form-group">
-					       <label htmlFor="username">Username</label>
-					       <input type="text" name="username" placeholder="username" onChange={(event)=> {this.setState({name:event.target.value})}}/>
-					       <p>{this.state.nameError}</p>
-					  </div>
-					  <div className="form-group">
-					       <label htmlFor="password">Password</label>
-					       <input type="password" name="password" placeholder="password" onChange={(event) => {this.setState({password:event.target.value})}}/>
-					       <p>{this.state.passwordError}</p>
-					  </div>
-			     </div> 
-			</div>
-			<div className="footer">
-			    <button type="button" onclick={this.submit} className="btn">LogIn</button>
-			</div>
 			<div>
-	   		<LoginFacebook />
-	   		</div>
+			
+				<div className="main-container">		
+			<div className="base-container-1">
+			<h1>Sign Up Form</h1>
+			<form className="form-deco">				
+		       <input type="text" className="input-4" name="username" placeholder="username" onChange={(event)=> {this.setState({name:event.target.value})}}/>
+			   <input type="password" className="input-4" name="password" placeholder="password" onChange={(event) => {this.setState({password:event.target.value})}}/>
+			   <p><span><input type="checkbox"/></span>I agree to the terms and conditions of the services</p>
+			   <button type="button" onClick={this.submit} className="btn-4">LogIn</button>
+			   <a href="#">Forgot Pasword ?</a>
+		    </form>
+		    <div className="form-bottom-2">
+		    	<p>Don't have a Code Fox account yet?</p>
+		    	<a href="#">Create your account now</a>
+		    </div>
+			     
+	
 	   </div>
-	 </div>
+<div className="vertical-line"><p className="or">OR</p></div>
+	   <div className="base-container-2">
+	   <h1>Other ways to Login</h1>
+<div className="adjust-4">
+			              
+			                 <div className="envolope">
+			                   <span  className="logo-color-1"><FontAwesomeIcon icon={faFacebook} /></span>
+			                   <a href="#">Facebook Login</a>
+			                 </div>
+			                 <div className="envolope">
+			                   <span  className="logo-color-1"><FontAwesomeIcon icon={faGoogle}/></span>
+			                   <a href="#">Google Login</a>
+			                 </div>
+			                 <div className="envolope">
+			                   <span  className="logo-color-1"><FontAwesomeIcon icon={faInstagram} /></span>
+			                   <a href="#">Instagram Login</a>
+			                 </div>
+			                 </div>
+	   </div>
+	   </div>
 	 
+	 </div>
 			);
 	}
 	}
