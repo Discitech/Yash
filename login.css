@@ -10,18 +10,23 @@
 	flex: 1;
 	width: 400px;
 	height: 500px;
+	text-align: center;
 
 }
 
 .base-container-1 h1{
 	color:  #ec6952;
 	margin-bottom: 30px;
+	padding-right: 40px;
 }
 
 .base-container-2{
 	flex: 1;
 	width: 100px;
 	height: 500px;
+	text-align: center;
+	padding-right: 40px;
+	margin-top: 20px;
 }
 
 .base-container-2 .envolope{
@@ -45,7 +50,7 @@
     background: #ec6952;
     color: #fff;
     width: 60px;
-    height: 75%;
+    height: 100%;
     font-size: 20px;
     padding-top: 12px;
     text-align: center;
@@ -87,13 +92,12 @@
 
 .vertical-line{
       width: 0px; /* Use only border style */
-    
       float: left; 
       border: 1px inset; 
       height:500px;
       margin-left:50px;
       margin-right:50px;/* This is default border style for <hr> tag */
-    }
+}
 
 .adjust-4{
 	margin-top: 90px;
