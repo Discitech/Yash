@@ -1,0 +1,123 @@
+ .bg-light{
+    background: none !important;
+}
+
+.nav-link{
+    color: white;
+    font-size: large;
+}
+
+.nav-item button a{
+    color: black;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: black;
+    transition: .5s;
+}
+
+.logo-left{
+    margin-left: 90px;
+}
+
+.logo-left img{
+    width: 194px;
+    height: 70px;
+}
+
+.right{
+    margin-right: 80px;
+}
+
+.scrolled {
+    background-color: white !important;
+    transition:500ms ease;
+    z-index: 10000;
+    box-shadow:  0 0 4px rgba(0,0,0,0.5);
+}
+
+.scrolled .nav-link{
+    color: black; 
+}
+
+.scrolled .nav-link:hover{
+    color: blue !important;
+    transition: .5s;
+}
+
+.scrolled button{
+    background-color: red !important;
+    color: white;
+}
+
+.scrolled button:hover{
+    background-color: #E74C3C !important;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 990px) {
+    .logo-left {
+        margin-top: -5px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .logo-left {
+        margin-top: -5px;
+        margin-left: -5px;
+        margin-right: 85px;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .logo-left img{
+        width: 135px;
+    }
+
+}
+/* @media screen and (max-width: 425px) {
+    .fixed-top {
+        position: absolute;
+    }
+
+    .right {
+        margin-right: 0px;
+        background-color: #777;
+        padding: 0.5rem;
+        color: #212529;
+        background-clip: padding-box;
+        z-index: 1000;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: .25rem;
+    } 
+
+    .dropdown{
+        margin-bottom: 0.5rem;
+    }
+
+    .nav-link{
+        display: block;
+        width: 100%;
+        padding: .25rem 1.5rem;
+        clear: both;
+        font-weight: 400;
+        color: #212529;
+        text-align: inherit;
+        white-space: nowrap;
+        background-color: transparent;
+        border: 0;
+    }
+
+    .nav-item button{
+        color: blue;
+        border-color: blue;
+    }
+
+    .nav-item button:hover{
+        background-color: blue;
+    }
+
+} */
