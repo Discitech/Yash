@@ -4,43 +4,92 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faFacebook,faGoogle,faInstagram } from '@fortawesome/free-brands-svg-icons';
 import "./login.css";
 import { faUser,faLock} from '@fortawesome/free-solid-svg-icons';
-
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const validator = require('validator');
 
 class Login extends Component{
 
 	constructor(props){
 		super(props);
 		this.state={
-			name: "",
+			email: "",
 			password:"",
-			nameError: "",
-			passwordError: ""
 		}
 		this.submit = this.submit.bind(this);
-		this.valid = this.valid.bind(this);
+		this.sendMail = this.sendMail.bind(this);
 	}
-	valid(){
-		if(!this.state.name.include("@") && this.state.password.length < 5){
-			this.setState({nameError: "invalid name",passwordError: "password length sholud be more than 5"});
+
+sendMail(){
+	axios.post('/contact',{
+		email: this.state.email,
+		message: this.state.message
+	})
+	.then((res) => {
+		if(res.data.msg === 'success'){
+
 		}
-		else if(this.state.name.include("@")){
-			this.setState({nameError: "invalid name"});
+		else if(res.data.msg === 'fail'){
+
 		}
-		else if(this.state.password.length < 5){
-			this.setState({passwordError: "password length sholud be more than 5"});
-		}
-		else{
-			return true;
-		}
-	}
+	})
+	.catch((error) => {
+		console.log(error);
+	})
+}
+
+
 	submit()
 	{
-		this.setState({nameError: "",passwordError: ""});
-		if (this.valid()) {
-			alert("form submitted")
+		if(validator.isEmail(this.state.email) && validator.isLength(this.state.password , {min:5, max: 10})){
+			this.sendMail();
 		}
-		
-
+		else if(!validator.isLength(this.state.password , {min:5, max: 10})){
+			toast.error('🦄 Invalid password. it should contain 5 value!', {
+                   position: "top-center",
+                   autoClose: 5000,
+                   hideProgressBar: false,
+                   closeOnClick: true,
+                   pauseOnHover: true,
+                   draggable: true,
+                   progress: undefined,
+               });
+			this.setState({email: "",password: ""});
+			
+		}
+		else if(!validator.isEmail(this.state.email)){
+			toast.error('🦄 Invalid Email!', {
+                   position: "top-center",
+                   autoClose: 5000,
+                   hideProgressBar: false,
+                   closeOnClick: true,
+                   pauseOnHover: true,
+                   draggable: true,
+                   progress: undefined,
+               });
+			this.setState({email: "",password: ""});
+		}
+		else{
+			toast.error('🦄 Invalid Password. it should contain 5 value!', {
+                   position: "top-center",
+                   autoClose: 5000,
+                   hideProgressBar: false,
+                   closeOnClick: true,
+                   pauseOnHover: true,
+                   draggable: true,
+                   progress: undefined,
+               });
+			toast.error('🦄 Invalid Email!', {
+                   position: "top-center",
+                   autoClose: 5000,
+                   hideProgressBar: false,
+                   closeOnClick: true,
+                   pauseOnHover: true,
+                   draggable: true,
+                   progress: undefined,
+               });
+			this.setState({email: "",password: ""});
+		}
 	}
 	render(){
 		return(
@@ -50,8 +99,8 @@ class Login extends Component{
 			<div className="base-container-1">
 			<h1>Sign Up Form</h1>
 			<form className="form-deco">				
-		       <input type="text" className="input-4" name="username" placeholder="username" onChange={(event)=> {this.setState({name:event.target.value})}}/>
-			   <input type="password" className="input-4" name="password" placeholder="password" onChange={(event) => {this.setState({password:event.target.value})}}/>
+		       <input type="text" className="input-4" name="email" value={this.state.email} placeholder="Your Email..." onChange={(event)=> {this.setState({name:event.target.value})}}/>
+			   <input type="password" className="input-4" name="password" placeholder="Your Password..." onChange={(event) => {this.setState({password:event.target.value})}}/>
 			   <p><span><input type="checkbox"/></span>I agree to the terms and conditions of the services</p>
 			   <button type="button" onClick={this.submit} className="btn-4">LogIn</button>
 			   <a href="#">Forgot Pasword ?</a>
